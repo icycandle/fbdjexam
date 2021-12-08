@@ -194,7 +194,9 @@ wcwidth==0.2.5
 wheel==0.37.0
     # via pip-tools
 whitenoise==5.3.0
-    # via django-heroku
+    # via
+    #   -r requirements.in
+    #   django-heroku
 wrapt==1.13.3
     # via astroid
 zipp==3.6.0

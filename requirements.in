@@ -21,6 +21,7 @@ django-celery-email
 ipdb
 pip-tools
 gunicorn
+whitenoise
 django-heroku
 redis
 celery[redis]

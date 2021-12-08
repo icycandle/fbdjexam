@@ -124,8 +124,12 @@ WSGI_APPLICATION = 'fbdjexam.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'ec2-54-89-105-122.compute-1.amazonaws.com',
+        'NAME': 'ddvo1q70aed7hu',
+        'USER': 'ayyzyugrhqyqrb',
+        'PORT': '5432',
+        'PASSWORD': '5636c805e4786d456173de30786193a5a18a2b0c6406e567be43c8abddf7fb5b',
     }
 }
 

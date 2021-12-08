@@ -120,7 +120,9 @@ prompt-toolkit==3.0.23
     #   click-repl
     #   ipython
 psycopg2==2.9.2
-    # via django-heroku
+    # via
+    #   -r requirements.in
+    #   django-heroku
 ptyprocess==0.7.0
     # via pexpect
 pycodestyle==2.8.0

@@ -1,0 +1,22 @@
+django==3.2.10
+# django-rest-framework
+django-allauth
+django-extensions
+django-debug-toolbar
+ipython
+# django-widget-tweaks
+pylint-django
+# django-model-utils
+# mysqlclient
+# django-webpack-loader
+autopep8
+# django-bootstrap4
+# django-registration-redux
+# django-mysql
+# python-memcached
+# django-guardian
+# django-celery-email
+# django-storages
+# django-grappelli
+ipdb
+pip-tools

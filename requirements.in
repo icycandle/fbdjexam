@@ -20,3 +20,5 @@ autopep8
 # django-grappelli
 ipdb
 pip-tools
+gunicorn
+django-heroku

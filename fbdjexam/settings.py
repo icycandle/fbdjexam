@@ -200,5 +200,7 @@ REDIS_TLS_URL = os.environ.get("REDIS_TLS_URL")
 
 LOGIN_REDIRECT_URL = '/'
 
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
+
 # Activate Django-Heroku.
 django_heroku.settings(locals())

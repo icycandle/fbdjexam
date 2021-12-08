@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
 
-from dashboard.views import HomeView
+from dashboard.views import HomeView, LoginUserResetPassword
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
+    path('accounts/login-user-reset-password', LoginUserResetPassword.as_view(), name='login_user_reset_password'),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
 ]

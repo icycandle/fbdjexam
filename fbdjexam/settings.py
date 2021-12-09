@@ -129,6 +129,8 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+SOCIALACCOUNT_ADAPTER = 'dashboard.social_account_adapter.SocialAdapter'
+
 WSGI_APPLICATION = 'fbdjexam.wsgi.application'
 
 

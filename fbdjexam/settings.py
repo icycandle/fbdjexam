@@ -35,6 +35,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'fbdjexam-02.herokuapp.com',
+    'localhost',
 ]
 
 
@@ -90,7 +91,7 @@ TEMPLATES = [
 ]
 
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.AllowAllUsersModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
@@ -204,6 +205,7 @@ REDIS_TLS_URL = os.environ.get("REDIS_TLS_URL")
 LOGIN_REDIRECT_URL = '/'
 
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
+ACCOUNT_EMAIL_REQUIRED = True
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())

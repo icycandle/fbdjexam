@@ -1,6 +1,8 @@
+from allauth.account.models import EmailAddress
+from allauth.account.utils import send_email_confirmation
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
 from django.utils.decorators import method_decorator
-
 from django.views.generic import TemplateView, FormView
 
 from dashboard.forms import LoginUserResetPasswordForm
@@ -11,11 +13,29 @@ class HomeView(TemplateView):
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
+        if self.request.user.need_email_verified():
+            return redirect('resend_activation_email')
         return super().dispatch(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+
+
+class ResendActivationEmailView(TemplateView):
+    template_name = 'dashboard/resend_activation_email.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+    @method_decorator(login_required)
+    def post(self, request, *args, **kwargs):
+        email_address = EmailAddress.objects.filter(user=request.user, primary=True).first()
+        if email_address:
+            email = email_address.email
+            send_email_confirmation(request=request, user=request.user, email=email)
+        return redirect('home')
 
 
 class LoginUserResetPassword(FormView):

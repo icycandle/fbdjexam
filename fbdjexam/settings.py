@@ -116,7 +116,10 @@ SOCIALACCOUNT_PROVIDERS = {
         'INIT_PARAMS': {'cookie': True},
         'FIELDS': [
             'id',
+            'email',
             'name',
+            'first_name',
+            'last_name',
             'picture',
         ],
         'LOCALE_FUNC': lambda request: 'en_US',

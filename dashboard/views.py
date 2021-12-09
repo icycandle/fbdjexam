@@ -3,9 +3,9 @@ from allauth.account.utils import send_email_confirmation
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from django.utils.decorators import method_decorator
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView, FormView, UpdateView
 
-from dashboard.forms import LoginUserResetPasswordForm
+from dashboard.forms import LoginUserResetPasswordForm, UserNameForm
 
 
 class HomeView(TemplateView):
@@ -20,6 +20,19 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+
+
+class UserNameFormView(UpdateView):
+    template_name = 'dashboard/user-form.html'
+    form_class = UserNameForm
+    success_url = '/'
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
 
 class ResendActivationEmailView(TemplateView):

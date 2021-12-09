@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
 
-from dashboard.views import HomeView, LoginUserResetPassword, ResendActivationEmailView
+from dashboard.views import HomeView, LoginUserResetPassword, ResendActivationEmailView, UserNameFormView
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('accounts/login-user-reset-password', LoginUserResetPassword.as_view(), name='login_user_reset_password'),
     path('accounts/resend-activation-email', ResendActivationEmailView.as_view(), name='resend_activation_email'),
+    path('accounts/user-name-form', UserNameFormView.as_view(), name='user_name_form'),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
 ]

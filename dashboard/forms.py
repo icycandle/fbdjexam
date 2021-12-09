@@ -1,7 +1,19 @@
 from django import forms
 from django.contrib.auth.password_validation import validate_password
-from django.forms import Form
+from django.forms import Form, ModelForm
 from django.utils.translation import gettext_lazy as _
+
+from dashboard.models import User
+
+
+class UserNameForm(ModelForm):
+    class Meta:
+        model = User
+        fields = [
+            'username',
+            'first_name',
+            'last_name',
+        ]
 
 
 class LoginUserResetPasswordForm(Form):

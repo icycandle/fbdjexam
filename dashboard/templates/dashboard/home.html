@@ -14,7 +14,7 @@
         </tr>
         <tr>
             <td>
-                {{ request.user.username }}
+                {{ request.user.username }} ({{ request.user.get_full_name }})
             </td>
             <td>
                 {{ request.user.email }}
@@ -25,6 +25,9 @@
 
     <a href="{% url 'login_user_reset_password' %}" class="btn btn-warning">
         Reset Password
+    </a>
+    <a href="{% url 'user_name_form' %}" class="btn btn-primary">
+        Change User Name
     </a>
 {% endblock %}
 

@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-mrne%v0(^hr2)@46m(28uy3r7a_w$rsf1_io=i7w!g9o^le@gu
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'fatball-exam.herokuapp.com',
+    'fbdjexam-02.herokuapp.com',
 ]
 
 
